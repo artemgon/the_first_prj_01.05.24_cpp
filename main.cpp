@@ -2,36 +2,44 @@
 using namespace std;
 
 int main() {
-	float us_dollar = 39.59;
-	float euro = 42.26;
-	float j_yen = 3.98;
-	char u_choice;
-	for (;;) {
-		for (;;)
+	float uah, eur, usd, jpy;
+	int user_decision;
+	for (;;)
+	{
+		cout << "Please, enter the option you want.\n" << "1 - certain currency to uah, 2 - uah to certain currency\n" << "or 0 - exit: ";
+		cin >> user_decision;
+		switch (user_decision)
 		{
-			cout << "\nChoose the currency to see it's cost in UAH or type 0, if you want to end up: ";
-			cout << "\n d - us dollar, e - euro, y - jap. yen\n";
-			cin >> u_choice;
-			switch (u_choice)
-			{
-			case 'd':
-				cout << us_dollar;
-				break;
-			case 'e':
-				cout << euro;
-				break;
-			case 'y':
-				cout << j_yen;
-				break;
-			case '0':
-				exit(0);
-				break;
-			default:
-				cout << "You've inopportune sign. Please, try again.";
-				break;
-			}
+		case 1:
+			cout << "How many euros do you want to convert? Please, enter: ";
+			cin >> eur;
+			cout << eur << " euro(s) is(are) " << eur * 43.91 << " hryvni\n";
+			cout << "How many dollars do you want to convert? Please, enter: ";
+			cin >> usd;
+			cout << usd << " dollar(s) is(are) " << usd * 40.53 << " hryvni\n";
+			cout << "How many yen do you want to convert? Please, enter: ";
+			cin >> jpy;
+			cout << jpy << " yen is(are) " << jpy * 0.26 << " hryvni\n";
+			break;
+		case 2:
+			cout << "How many hryvni do you want to convert to euros? Please, enter: ";
+			cin >> uah;
+			cout << uah << " hryvnia(vni) is(are) " << uah * 0.023 << " euros\n";
+			cout << "How many hryvni do you want to convert to dollars? Please, enter: ";
+			cin >> uah;
+			cout << uah << " hryvnia(vni) is(are) " << uah * 0.025 << " dollars\n";
+			cout << "How many hryvni do you want to convert to yen? Please, enter: ";
+			cin >> uah;
+			cout << uah << " hryvnia(vni) is(are) " << uah * 3.88 << " yen\n";
+			break;
+		default:
+			cout << "Invalid value\n";
+			break;
 		}
-		break;
+		if (user_decision == 0) {
+			cout << "Bye!";
+			break;
+		}
 	}
 	return 0;
 }
